@@ -136,10 +136,10 @@ ls -d "${DSH_HOME:-$HOME/.dsh}"/profiles 2>/dev/null
 
 ```powershell
 # Web 宿主
-dsh plugin --profile web add https://github.com/ZXEB/dsh-purge/archive/refs/heads/master.tar.gz
+dsh plugin --profile web add https://github.com/yaj6835669/dsh-purge/archive/refs/heads/master.tar.gz
 
 # 桌面宿主（先完全退出桌面客户端）
-dsh plugin --profile desktop add https://github.com/ZXEB/dsh-purge/archive/refs/heads/master.tar.gz
+dsh plugin --profile desktop add https://github.com/yaj6835669/dsh-purge/archive/refs/heads/master.tar.gz
 ```
 
 macOS / Linux 同一条命令。
@@ -147,12 +147,12 @@ macOS / Linux 同一条命令。
 装完 profile 的 `package.json` 里会多出一条依赖：
 
 ```json
-"dsh-purge": "https://github.com/ZXEB/dsh-purge/archive/refs/heads/master.tar.gz"
+"dsh-purge": "https://github.com/yaj6835669/dsh-purge/archive/refs/heads/master.tar.gz"
 ```
 
 同时在 `dsh.profile.bundles` 末尾自动登记 `dsh-purge`。**两条都在 = 装对了。**
 
-> 仓库已把 `package.json` 的 `repository / homepage / bugs / dsh.install` 全部指向 `ZXEB/dsh-purge`，所以「检查更新」与面板里的仓库链接都走本仓库，不会再打原来的死链。
+> 仓库已把 `package.json` 的 `repository / homepage / bugs / dsh.install` 全部指向 `yaj6835669/dsh-purge`，所以「检查更新」与面板里的仓库链接都走本仓库，不会再打原来的死链。
 
 ---
 
@@ -188,10 +188,10 @@ dsh plugin --profile web add .
 目录名必须是 `dsh-purge`，里面 `package.json` 的 `"name"` 也必须是 `dsh-purge`。
 
 ```sh
-git clone https://github.com/ZXEB/dsh-purge.git "$DSH_HOME/plugins/dsh-purge"
+git clone https://github.com/yaj6835669/dsh-purge.git "$DSH_HOME/plugins/dsh-purge"
 ```
 
-没有 git 就下载 [master.tar.gz](https://github.com/ZXEB/dsh-purge/archive/refs/heads/master.tar.gz)，解压后把 `dsh-purge-master` 改名成 `dsh-purge`，整夹放进 `plugins/`。
+没有 git 就下载 [master.tar.gz](https://github.com/yaj6835669/dsh-purge/archive/refs/heads/master.tar.gz)，解压后把 `dsh-purge-master` 改名成 `dsh-purge`，整夹放进 `plugins/`。
 
 **第 2 步：备份并修改 profile 的 `package.json`**
 
@@ -421,11 +421,11 @@ flowchart TD
 
 ```powershell
 dsh plugin --profile desktop remove dsh-purge
-dsh plugin --profile desktop add https://github.com/ZXEB/dsh-purge/archive/refs/heads/master.tar.gz
+dsh plugin --profile desktop add https://github.com/yaj6835669/dsh-purge/archive/refs/heads/master.tar.gz
 # 然后完全退出宿主 → 重开 → 清洗 → 应用
 ```
 
-面板里也有「更新 / 切换到正式版」，读的是本仓库（`package.json` 的 repository / homepage 已指向 `ZXEB/dsh-purge`）。发新版流程：改 `package.json` 版本号 → `release-notes.md` 首行写 `# <版本>` → 推 `master`，Actions 自动出 Release 与 zip。
+面板里也有「更新 / 切换到正式版」，读的是本仓库（`package.json` 的 repository / homepage 已指向 `yaj6835669/dsh-purge`）。发新版流程：改 `package.json` 版本号 → `release-notes.md` 首行写 `# <版本>` → 推 `master`，Actions 自动出 Release 与 zip。
 
 **还原**（保留插件，只回原版宿主）：
 
@@ -513,7 +513,7 @@ dsh plugin --profile web allow-version dsh-purge@1.1.71 --dsh-version <你的精
 
 ## 十二、声明、署名与许可
 
-**署名要求（沿用原作者条款）**：借用本项目的名称、思路、代码或提示词，必须署名并写明来源。原始来源：**`YuJunZhiXue/dsh-purge`（作者：小杨）**；本仓库为该版本的镜像重建：**`ZXEB/dsh-purge`**。去掉署名、隐去来源、据为己有会被追究。
+**署名要求（沿用原作者条款）**：借用本项目的名称、思路、代码或提示词，必须署名并写明来源。原始来源：**`YuJunZhiXue/dsh-purge`（作者：小杨）**；本仓库为该版本的镜像重建：**`yaj6835669/dsh-purge`**。去掉署名、隐去来源、据为己有会被追究。
 
 **用途与边界**
 
